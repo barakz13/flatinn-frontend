@@ -1,35 +1,19 @@
-# Homebnb-frontend
+# Flat-Inn
 
-This template should help get you started developing with Vue 3 in Vite.
+I'm happy to share the final project of my studies: Flat-Inn.
 
-## Recommended IDE Setup
+## Description
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+Flat-Inn, an Airbnb like application, let you explore between a variety of destinations, make an order of a desired destination and manage your stays and orders as a host.
 
-## Customize configuration
+## Software and Languages used
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Vue 3 CLI (using Vite), SCSS, NodeJS (with Express.js) and MongoDB Atlas.
 
-## Project Setup
+Hope you'd like it!
 
-```sh
-npm install
-```
+<a href="https://flat-inn-101.herokuapp.com/" target="blank">Link to the Project</a>
+<a href="https://github.com/barakz13/flatinn-backend">Link to the Backend Repository</a>
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+![My Image](fifull.png)
+![My Image](fimobile.jpeg)
