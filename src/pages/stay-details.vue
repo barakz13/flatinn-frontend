@@ -700,7 +700,7 @@ export default {
       };
 
       let order = {
-        hostId: '624b171a398f932c7d8c418c',
+        hostId: '62864cd1483dba29dcb2cc03',
 
         totalPrice: this.totalPrice,
         buyer: buyerDetails,

@@ -267,7 +267,7 @@
                 <td class="stays-table-content-pic">
                   <img
                     class="backoffice-stay-img"
-                    :src="`data/Images/${stay.imgUrls[0]}`"
+                    :src="`src/assets/gallery/${stay.imgUrls[0]}`"
                     alt="backoffice-stay-pic"
                   />
                 </td>
@@ -370,10 +370,10 @@ export default {
       this.setCurrRevenues;
       this.setLocaleString;
       await this.$store.dispatch({
-        type: 'loadStaysForBackOffice',
-        user: this.loggedInUser,
+        type: 'loadStays',
       });
       this.staysForDisplay = await this.$store.getters.getStaysForBackOffice;
+      console.log(this.staysForDisplay);
       console.log(this.ordersForDisplay);
     } catch (err) {
       console.log('err', err);
