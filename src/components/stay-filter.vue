@@ -18,7 +18,7 @@
             v-for="(addres, idx) in getAddresses"
             :key="idx"
             :value="addres"
-          />
+          ></option>
         </datalist>
       </div>
     </div>
@@ -27,7 +27,12 @@
       <div class="check-in-input-container">
         <div class="check-in-input-div">
           <label class="date-input-label"
-            >Check-in <input type="text" placeholder="Add dates" disabled
+            >Check-in
+            <input
+              type="text"
+              placeholder="Add dates"
+              disabled
+              v-model="filterBy.range.start"
           /></label>
         </div>
       </div>
@@ -35,7 +40,12 @@
       <div class="check-out-input-container">
         <div class="check-out-input-div">
           <label class="date-input-label"
-            >Check-out <input type="text" placeholder="Add dates" disabled
+            >Check-out
+            <input
+              type="text"
+              placeholder="Add dates"
+              disabled
+              v-model="filterBy.range.end"
           /></label>
         </div>
       </div>
@@ -96,9 +106,9 @@
         v-model="filterBy.range"
         color="gray"
         is-range
-        rows="1"
-        columns="2"
-        :mask="mask.data"
+        :rows="1"
+        :columns="2"
+        :model-config="modelConfig"
         :min-date="new Date()"
       />
       <div class="close-modal-btn-container">
@@ -148,12 +158,13 @@ export default {
           children: 0,
         },
         range: {
-          start: new Date(),
-          end: new Date(),
+          start: null,
+          end: null,
         },
       },
-      mask: {
-        data: ['L', 'YYYY-MM-DD', 'YYYY/MM/DD'],
+      modelConfig: {
+        type: 'string',
+        mask: 'MMM D',
       },
       currPage: null,
       isGuestModalOpen: false,
@@ -213,8 +224,8 @@ export default {
       this.isCalanderModalOpen = false;
     },
     clearDateModal() {
-      this.range.start = new Date();
-      this.range.end = new Date();
+      this.filterBy.range.start = null;
+      this.filterBy.range.end = null;
     },
     firstCapitalLetter(str) {
       var firstLetter = str.slice(0, 1).toUpperCase();
@@ -249,6 +260,12 @@ export default {
       handler() {
         this.currPage = this.$store.getters.getCurrPage;
       },
+    },
+    'filterBy.range': {
+      handler() {
+        console.log(this.filterBy.range);
+      },
+      deep: true,
     },
   },
 };

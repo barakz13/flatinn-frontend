@@ -1,7 +1,7 @@
 <template>
   <section class="app-header-con">
     <div class="app-header" :class="{ details: headerShort }">
-      <router-link to="/" class="logo-con">
+      <router-link to="/" class="logo-con" @click="close">
         <img class="logo-img" src="../assets/logo.svg" alt="img-logo" />
         <div class="logo-txt">Flat-Inn</div>
       </router-link>
@@ -228,6 +228,7 @@ export default {
         this.currPage = this.$store.getters.getCurrPage;
         //bla
         this.updateFiltersStatus();
+        this.close();
       },
     },
   },

@@ -42,3 +42,8 @@ a:hover {
   background-color: #f7f7f7;
   border-radius: 22px;
 }
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #717171;
+}

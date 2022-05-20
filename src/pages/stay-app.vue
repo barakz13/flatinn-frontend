@@ -13,9 +13,7 @@ import stayFilter from '../components/stay-filter.vue';
 import stayList from '../components/stay-list.vue';
 export default {
   data() {
-    return {
-      stays: null,
-    };
+    return {};
   },
   methods: {
     onBtnFilter(exploreFilter) {
@@ -31,7 +29,6 @@ export default {
   created() {
     console.log('STAY APP CREATED!!!===================================');
     this.$store.commit({ type: 'setWantToSearch', isWantToSearch: false });
-    this.stays = this.$store.getters.getStays;
     this.$store.commit({ type: 'setCurrPage', page: 'stayApp' });
   },
 };
