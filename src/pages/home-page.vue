@@ -29,7 +29,7 @@
       <div class="dest-grid">
         <div class="img-con10" style="background-color: ">
           <img
-            @click="setfilterParams"
+            @click="setFilterParams"
             class="img1"
             src="../assets/img/dest/Hong.Kong.jpg"
           />
@@ -37,7 +37,7 @@
         </div>
         <div class="img-con10" style="background-color: ">
           <img
-            @click="setfilterParams"
+            @click="setFilterParams"
             class="img1"
             src="../assets/img/dest/Barcelona.jpg"
           />
@@ -45,7 +45,7 @@
         </div>
         <div class="img-con10" style="background-color: ">
           <img
-            @click="setfilterParams"
+            @click="setFilterParams"
             class="img1"
             src="../assets/img/dest/New.York.jpg"
           />
@@ -53,7 +53,7 @@
         </div>
         <div class="img-con10" style="background-color: ">
           <img
-            @click="setfilterParams"
+            @click="setFilterParams"
             class="img1"
             src="../assets/img/dest/Sydney.jpg"
           />
@@ -109,7 +109,7 @@
       <label class="host-title">Questions about hosting?</label>
     </div>
     <br />
-    <button class="host-btn" onclick="alert('bla')">Learn more</button>
+    <button class="host-btn">Learn more</button>
     <!-- <el-button class="host-btn" color="gray" style="color: #ebebeb">Learn more</el-button> -->
     <div class="filter-cont"></div>
   </div>
@@ -148,15 +148,29 @@ export default {
   },
   methods: {
     // Tal
-    setfilterParams(imgSrc) {
+    setFilterParams(imgSrc) {
       const regex = /[^/\\]+(?:jpg|jpeg|gif|png)/gi;
       var filename = imgSrc.target.src.match(regex).join('');
       console.log('filename', filename);
       const idx = filename.lastIndexOf('.');
       var cityName = filename.substring(0, idx);
-      console.log('cityName', cityName.replace(/\./g, ' '));
-
-      this.$router.push(`/stay?address=${cityName.replace(/\./g, ' ')}`);
+      const fixedCityName = cityName.replace(/\./g, ' ');
+      console.log('typeof', typeof fixedCityName);
+      this.$store.dispatch({
+        type: 'filter',
+        filterBy: {
+          address: fixedCityName,
+          guests: {
+            adults: 0,
+            children: 0,
+          },
+          range: {
+            start: null,
+            end: null,
+          },
+        },
+      });
+      this.$router.push(`/stay?address=${fixedCityName}`);
     },
     // Tal
     // When we put real room type we can change.
@@ -172,7 +186,10 @@ export default {
   },
   computed: {
     isFilterUp() {
-      console.log('homepage this.$store.getters.isFilterUp =', this.$store.getters.isFilterUp);
+      console.log(
+        'homepage this.$store.getters.isFilterUp =',
+        this.$store.getters.isFilterUp
+      );
       return this.$store.getters.isFilterUp;
     },
     getCom() {

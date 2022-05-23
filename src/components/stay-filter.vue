@@ -59,7 +59,7 @@
         </label>
       </div>
       <div class="search-container">
-        <button class="search-btn" @click="setfilterParams">
+        <button class="search-btn" @click="setFilterParams">
           <img src="../assets/magnifying.svg" alt="search Icon" />
         </button>
       </div>
@@ -200,7 +200,8 @@ export default {
         filterBy: JSON.parse(JSON.stringify(this.filterBy)),
       });
     },
-    setfilterParams() {
+    setFilterParams() {
+      console.log(this.filterBy);
       this.filterBy.address = this.firstCapitalLetter(this.filterBy.address);
       this.setfilter();
       this.$router.push(`/stay?address=${this.filterBy.address}`);

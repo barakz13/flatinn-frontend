@@ -83,6 +83,7 @@ export default {
     //Tal
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
+      console.log(state.filterBy);
     },
     setCurrPage(state, { page }) {
       state.currPage = page;
@@ -108,19 +109,15 @@ export default {
     updateExploreFilter(state) {
       let foundStays = state.stays;
       console.log('state.exploreFilter=', state.exploreFilter);
-      if (
-        state.exploreFilter.priceRange.min &&
-        state.exploreFilter.priceRange.max
-      ) {
-        let priceMin = state.exploreFilter.priceRange.min;
-        let priceMax = state.exploreFilter.priceRange.max;
 
-        foundStays = foundStays.filter((stay) => {
-          if (stay.price >= priceMin && stay.price <= priceMax) {
-            return true;
-          }
-        });
-      }
+      let priceMin = state.exploreFilter.priceRange.min;
+      let priceMax = state.exploreFilter.priceRange.max;
+
+      foundStays = foundStays.filter((stay) => {
+        if (stay.price >= priceMin && stay.price <= priceMax) {
+          return true;
+        }
+      });
 
       if (state.exploreFilter.roomType.length > 0) {
         console.log('filter by room type!!!!');
