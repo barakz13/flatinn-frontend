@@ -150,12 +150,12 @@ export default {
     // Tal
     setFilterParams(imgSrc) {
       const regex = /[^/\\]+(?:jpg|jpeg|gif|png)/gi;
-      let filename = imgSrc.target.src.match(regex).join('');
-      console.log('filename', filename);
-      let idx = filename.lastIndexOf('.');
-      let cityName = filename.substring(0, idx);
-      idx = filename.lastIndexOf('.');
-      cityName = filename.substring(0, idx);
+      let fileName = imgSrc.target.src.match(regex).join('');
+      console.log('fileName', fileName);
+      let idx = fileName.lastIndexOf('.');
+      let cityName = fileName.substring(0, idx);
+      idx = cityName.lastIndexOf('.');
+      cityName = cityName.substring(0, idx);
       const fixedCityName = cityName.replace(/\./g, ' ');
       console.log('typeof', typeof fixedCityName);
       this.$store.dispatch({
