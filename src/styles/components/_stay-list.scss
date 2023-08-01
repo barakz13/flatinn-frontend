@@ -30,6 +30,7 @@
 }
 
 .explore-btns {
+  height: 47px;
   margin-left: -2px;
 
   .explore-btn {
@@ -65,19 +66,57 @@
 }
 
 .price-modal {
-  height: 328px;
-  width: 442px;
-  margin-top: 4px;
-  z-index: 10;
+  // height: 328px;
+  // width: 442px;
+  // margin-top: 4px;
+  // z-index: 10;
+  // position: absolute;
+  // background-color: white;
+  // border: 0.5px solid rgba(118, 118, 118, 0.28);
+  // border-radius: 12px;
+  // box-shadow: rgb(0 0 0 / 15%) 0px 10px 37px;
   position: absolute;
-  background-color: white;
+  width: 340px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
   border: 0.5px solid rgba(118, 118, 118, 0.28);
   border-radius: 12px;
-  box-shadow: rgb(0 0 0 / 15%) 0px 10px 37px;
+  box-shadow: 0 10px 37px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+
+  .range-input-container {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+
+    .range-input {
+      border-radius: 5px;
+      border: 1px solid #dddddd;
+      height: 30px;
+      padding: 10px;
+    }
+
+    .input-min {
+      margin-left: 14px;
+    }
+
+    .input-max {
+      margin-top: 5px;
+      margin-left: 10px;
+    }
+  }
 
   .action-buttons {
-    height: 328px;
-    width: 442px;
+    // height: 328px;
+    // width: 442px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-top: 1px solid #ebebeb;
 
     .save-btn {
       background-color: #222;
@@ -131,8 +170,8 @@
   // border-radius: 12px;
   // box-shadow: rgb(0 0 0 / 15%) 0px 10px 37px;
   position: absolute;
-  top: 285px;
-  left: 172px;
+  top: 171px;
+  left: 96px;
   width: 340px;
   z-index: 10;
   display: flex;
@@ -198,7 +237,7 @@
             vertical-align: top;
             border-radius: 4px;
             // background: rgb(34, 34, 34);
-            color: rgb(255, 255, 255);
+            // color: rgb(255, 255, 255);
             // border-color: rgb(34, 34, 34);
           }
 

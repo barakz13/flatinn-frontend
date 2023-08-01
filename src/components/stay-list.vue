@@ -76,18 +76,25 @@
     </button>
 
     <div v-if="isPriceActive" class="price-modal">
-      <h3>Price</h3>
-      <div class="range-nput">
-        <input
-          type="number"
-          placeholder="minimum price"
-          v-model="priceRange.min"
-        />
-        <input
-          type="number"
-          placeholder="maximum price"
-          v-model="priceRange.max"
-        />
+      <div class="range-input-container">
+        <label class="range-input-label">
+          Min:
+          <input
+            class="range-input input-min"
+            type="number"
+            placeholder="minimum price"
+            v-model="priceRange.min"
+          />
+        </label>
+        <label class="range-input-label">
+          Max:
+          <input
+            class="range-input input-max"
+            type="number"
+            placeholder="maximum price"
+            v-model="priceRange.max"
+          />
+        </label>
       </div>
       <div class="action-buttons">
         <button class="clear-btn" @click.stop.prevent="clearPrice">
@@ -310,6 +317,8 @@ export default {
     // Like airBnb
     clearRoomType() {
       this.exploreBtnsFilter.roomType = [];
+      this.isPrivateChecked = false;
+      this.isEntireChecked = false;
       // this.$emit('btnsFilter', this.exploreBtnsFilter);
     },
   },

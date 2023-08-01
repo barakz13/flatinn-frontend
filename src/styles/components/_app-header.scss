@@ -24,9 +24,22 @@
     margin: auto;
     max-width: 1600px;
 
-    @media (max-width: 1127px) {
-      padding-left: 40px;
-      padding-right: 40px;
+    // @media (max-width: 1127px) {
+    //   padding-left: 40px;
+    //   padding-right: 40px;
+    // }
+
+    @media (max-width: 1650px) {
+      max-width: 1400px;
+    }
+    @media (max-width: 1450px) {
+      max-width: 1200px;
+    }
+    @media (max-width: 1250px) {
+      max-width: 1000px;
+    }
+    @media (max-width: 1050px) {
+      max-width: 800px;
     }
 
     .small-filter-div {
@@ -108,6 +121,10 @@
 
       .main-nav-links {
         font-size: 14px;
+
+        @media (max-width: 1127px) {
+          display: none;
+        }
       }
 
       .menu {

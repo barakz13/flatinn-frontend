@@ -27,7 +27,11 @@
       </div>
       <div class="main-nav">
         <div class="main-nav-links">
-          <router-link class="menu-link" to="/stay" @click="close">
+          <router-link
+            class="menu-link main-nav-explore"
+            to="/stay"
+            @click="close"
+          >
             Explore</router-link
           >
           <router-link class="menu-link main-nav-host" to="/" @click="close"

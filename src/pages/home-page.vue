@@ -154,6 +154,7 @@ export default {
       console.log('fileName', fileName);
       let idx = fileName.lastIndexOf('.');
       let cityName = fileName.substring(0, idx);
+      // addition for production in render - for local delete the next two lines
       idx = cityName.lastIndexOf('.');
       cityName = cityName.substring(0, idx);
       const fixedCityName = cityName.replace(/\./g, ' ');
