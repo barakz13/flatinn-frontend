@@ -16,5 +16,5 @@ Hope you'd like it!
 </br>
 <a href="https://github.com/barakz13/flatinn-backend">Link to the Backend Repository</a>
 
-![My Image](fifull.png)
+![My Image](flatfull.png)
 ![My Image](fimobile.jpeg)
